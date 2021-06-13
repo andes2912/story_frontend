@@ -22,7 +22,7 @@
               </div>
 
               <div class="d-flex align-items-center">
-                <button type="submit" class="btn btn-outline shadow">
+                <button type="submit" class="btn btn-outlines shadow">
                   Login
                 </button>
               </div>
@@ -30,7 +30,7 @@
           </div>
           <div class="card-footer py-3 border-0">
             <div class="text-center">
-              Don't have an account? <nuxt-link to="register" class="text-dark">Create</nuxt-link>
+              <span class="font-monospace">Not system is SAFE !</span>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default {
   color: yellow;
 }
 
-.btn-outline {
+.btn-outlines {
   box-shadow: white;
   color: #4b5d67;
   background-color: #ffffff;
