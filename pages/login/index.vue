@@ -30,7 +30,7 @@
           </div>
           <div class="card-footer py-3 border-0">
             <div class="text-center">
-              <span class="font-monospace">Not system is SAFE !</span>
+              <span class="font-monospace">No system is SAFE !</span>
             </div>
           </div>
         </div>

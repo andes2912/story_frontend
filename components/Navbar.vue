@@ -31,7 +31,7 @@
           </template>
           <template v-else>
             <li class="nav-item">
-              <nuxt-link class="nav-link" to="/login">Login</nuxt-link>
+              <nuxt-link class="nav-link btn btn-login shadow text-white" to="/login"> Login <i class="bi bi-box-arrow-in-right"></i></nuxt-link>
             </li>
           </template>
         </ul>
@@ -63,4 +63,11 @@ export default {
    border: 2px solid;
    margin: 10px 20px ;
  }
+ .btn-login {
+  box-shadow: white;
+  color: #fdfeff;
+  background-color: #e4473279;
+  border-color: #4b5d67;
+  letter-spacing: 0.05em;
+}
 </style>
