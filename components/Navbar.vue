@@ -7,14 +7,58 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <!-- <a class="nav-link text-white font-monospace" aria-current="page" href="#">Portofolio</a> -->
-          </li>
+          <template v-if="isLoggedIn">
+            <li class="nav-item">
+              <nuxt-link to="/artikel" class="nav-link text-white">Article</nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link to="/kategori" class="nav-link text-white">Category</nuxt-link>
+            </li>
+          </template>
+        </ul>
+        <ul class="navbar-nav">
+          <template v-if="isLoggedIn">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{user.name}}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <li><nuxt-link class="dropdown-item" to="/profile">Profile</nuxt-link></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="" @click="logout">Logout</a></li>
+              </ul>
+            </li>
+          </template>
+          <template v-else>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/login">Login</nuxt-link>
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/register">Register</nuxt-link>
+            </li>
+          </template>
         </ul>
       </div>
     </div>
   </nav>
 </template>
+<script>
+import { mapGetters } from 'vuex'
+
+export default {
+  computed: {
+    ...mapGetters([
+        'user',
+        'isLoggedIn'
+    ])
+  },
+  methods: {
+   async logout() {
+    await this.$auth.logout();
+   }
+  }
+}
+</script>
 <style>
  .navbar {
    background-color: #6b778d;

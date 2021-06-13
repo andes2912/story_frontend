@@ -9,13 +9,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <nuxt-link to="/read" class="link">
+      <div class="col-md-6" v-for="(articles, index) in article" :key="index">
+        <nuxt-link :to="articles.slug" class="link">
           <div class="card mb-3 article">
             <div class=" g-0">
               <div class="col-md-12">
                 <div class="card-body">
-                  <h5 class="font-monospace title">Susahnya jadi programmer, salahnya bukan cuma dimata perempuan aja !</h5>
+                  <h5 class="font-monospace title">{{articles.title}}</h5>
                   <p class="card-text mt-3 title"><small class="text-muted font-monospace">Last updated 3 mins ago</small></p>
                 </div>
               </div>
@@ -23,7 +23,7 @@
           </div>
         </nuxt-link>
       </div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-6">
         <nuxt-link to="/read" class="link">
           <div class="card mb-3 article">
             <div class=" g-0">
@@ -84,10 +84,36 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      article: {}
+    }
+  },
+
+  mounted() {
+    this.getArticle()
+  },
+
+  methods: {
+    async getArticle() {
+      this.$axios.get('/articles')
+      .then(res => {
+        this.article = res.data.data
+        console.log(res.data.data)
+      })
+      .catch(e => {
+        console.log(e.data.errors);
+      })
+    }
+  },
+}
+</script>
 <style>
 .welcome {
   background-color: #e1e099;
