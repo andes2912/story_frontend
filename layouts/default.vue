@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="con">
     <Navbar />
     <br>
     <Nuxt />
@@ -16,3 +16,10 @@ export default {
   }
 }
 </script>
+<style>
+.con {
+  margin-left: 10px;
+  margin-right: 22px;
+  margin-top: 5px;
+}
+</style>

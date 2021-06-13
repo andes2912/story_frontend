@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
+    <div class="container">
       <NuxtLink class="navbar-brand text-white font-monospace" to="/">Story</NuxtLink>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,6 @@ export default {
    background-color: #6b778d;
    box-shadow: 15px 12px 0px -1px #4b5d67 ;
    border: 2px solid;
-   margin: 10px 20px ;
  }
  .btn-login {
   box-shadow: white;

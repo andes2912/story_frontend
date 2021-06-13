@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="containers">
     <div class="row">
       <div class="col-md-8 mt-3">
         <div class="card read">
@@ -29,23 +29,26 @@
             <div class="bio">
               <span class="font-monospace"><a href="https://andridesmana.pw/" target="_blank" class="other-link">Andri Desmana</a></span><br>
               <p class="small"><em>Hidup gak selamanya diatas, juga gak selamanya dibawah.</em></p>
+              <p class="font-monospace">
+                <a href="https://www.linkedin.com/in/andri-desmana" target="_blank"><i class="bi bi-linkedin" style="color:grey; font-size:1.2rem"></i></a>
+                <a href="https://www.facebook.com/andridesmana/" target="_blank"><i class="bi bi-facebook" style="color:grey; font-size:1.2rem"></i></a>
+                <a href="https://www.instagram.com/andridesmana/" target="_blank"><i class="bi bi-instagram" style="color:grey; font-size:1.2rem"></i></a>
+                <a href="https://github.com/andes2912" target="_blank"><i class="bi bi-github" style="color:grey; font-size:1.2rem"></i></a>
+                <a href="https://twitter.com/andri_desmana" target="_blank"><i class="bi bi-twitter" style="color:grey; font-size:1.2rem"></i></a>
+                <a href="https://t.me/andridesmana" target="_blank"><i class="bi bi-telegram" style="color:grey; font-size:1.2rem"></i></a>
+              </p>
               <p><a href="https://saweria.co/andes2912" target="_blank" class="coffe">Give me a Coffe <i class="bi bi-cup-fill" style="font-size:1.3rem"></i></a> </p>
             </div>
           </div>
         </div>
       </div>
 
-       <div class="col-md-4 mt-3">
+      <div class="col-md-4 mt-3">
         <div class="card read">
           <div class="card-body">
             <h4 class="font-monospace" style="color:black"><u>Other Link</u></h4>
 
             <p class="other" v-for="(articles ,index) in article" :key="index"><nuxt-link :to=" articles.slug " class="other-link">{{articles.title}}</nuxt-link></p>
-
-            <!-- <p class="other"><nuxt-link to="/" class="other-link">Alasan kenapa mayoritas programmer itu suka menyendiri</nuxt-link></p>
-            <p class="other"><nuxt-link to="/" class="other-link">Salut sama kalian yang ngoding pakai VIM (nyusain hidup aja)</nuxt-link></p>
-            <p class="other"><nuxt-link to="/" class="other-link">Ternyata jadi bisa itu gak susah-susah amat kok</nuxt-link></p>
-            <p class="other"><nuxt-link to="/" class="other-link">Seorang Software Engginer harus kuat mental !</nuxt-link></p> -->
           </div>
         </div>
       </div>
