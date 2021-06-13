@@ -19,7 +19,7 @@
                 <textarea class="form-control" v-model="desc" id="description" rows="3"></textarea>
               </div>
               <div class="mb-3">
-                <button type="submit" class="btn btn-outline">Create</button>
+                <button type="submit" class="btn btn-outlines">Create</button>
               </div>
             </form>
           </div>
@@ -118,7 +118,7 @@ thead {
 .form-label {
   color: yellow;
 }
-.btn-outline {
+.btn-outlines {
   box-shadow: white;
   color: #4b5d67;
   background-color: #ffffff;
