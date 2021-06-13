@@ -49,7 +49,7 @@ export default {
   ],
 
   axios: {
-    baseURL: 'http://localhost:8000/api'
+    baseURL: 'https://api.andridesmana.pw/api'
   },
 
   auth: {
