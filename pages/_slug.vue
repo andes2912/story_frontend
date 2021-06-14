@@ -2,7 +2,7 @@
   <div class="containers">
     <div class="row">
       <div class="col-md-8 mt-3">
-        <!-- <div v-show="errors == 404">
+        <!-- <div v-if="errors == 200">
           <img src="~/assets/image/no_result.svg" class="images" /> <br>
           <p class="text-center">Not Result ...</p>
         </div> -->
@@ -46,8 +46,8 @@
             </div>
           </div>
           </div>
-        </div>
-      <!-- </div> -->
+        <!-- </div> -->
+      </div>
 
       <div class="col-md-4 mt-3">
         <div class="card read">
@@ -78,16 +78,28 @@ export default {
 
   methods: {
     getDetailArticle() {
-      this.$axios.get(`articles/${this.$route.params.slug}`)
-      .then(response => {
-        this.detail = response.data.data
-      })
+      try {
+        this.$axios.get(`articles/${this.$route.params.slug}`)
+        .then(res => {
+          this.detail = res.data.data
+        })
+      } catch (error) {
+        this.errors = error.res.data.errors
+        console.log(error.res.data.errors)
+      }
+    },
+    // getDetailArticle() {
+    //   this.$axios.get(`news/${this.$route.params.slug}`)
+    //   .then(response => {
+    //     this.detail = response.data.data
+    //     this.user = response.data.data.user
+    //     this.category = response.data.data.category
+    //   })
       .catch(e => {
         this.errors = e.response.data.errors
         console.log(e.response.data.errors)
       })
     },
-
     getArticle() {
       this.$axios.get('/articles')
       .then(res => {
