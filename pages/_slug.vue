@@ -1,10 +1,8 @@
 <template>
   <div class="containers">
     <div class="row">
-
-
       <div class="col-md-8 mt-3">
-        <div v-if="errors != 200">
+        <div v-if="errors == 404">
           <img src="~/assets/image/no_result.svg" class="images" /> <br>
           <p class="text-center">Not Result ...</p>
         </div>
@@ -80,23 +78,23 @@ export default {
 
   methods: {
     getDetailArticle() {
-      try {
-        this.$axios.get(`articles/${this.$route.params.slug}`)
-        .then(res => {
-          this.detail = res.data.data
-        })
-      } catch (error) {
-        this.errors = error.res.data.errors
-      }
+      this.$axios.get(`articles/${this.$route.params.slug}`)
+      .then(response => {
+        this.detail = response.data.data
+      })
+      .catch(e => {
+        this.errors = e.response.data.errors
+        console.log(e.response.data.errors)
+      })
     },
+
     getArticle() {
       this.$axios.get('/articles')
       .then(res => {
         this.article = res.data.data
-        console.log(res.data.data)
       })
       .catch(e => {
-        this.errors = e.data.errors
+        this.errors = e.res.data.errors
       })
     }
   },
