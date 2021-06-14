@@ -28,12 +28,17 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/bootstrap.min.css'
+    '~/assets/bootstrap.min.css',
+    'quill/dist/quill.snow.css',
+    'quill/dist/quill.bubble.css',
+    'quill/dist/quill.core.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: "~plugins/vue-quill-editor.js", ssr: false }
   ],
+
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -50,6 +55,7 @@ export default {
 
   axios: {
     baseURL: 'https://api.andridesmana.pw/api'
+    // baseURL: 'http://127.0.0.1:8000/api'
   },
 
   auth: {

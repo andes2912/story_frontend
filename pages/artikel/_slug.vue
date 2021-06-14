@@ -4,10 +4,10 @@
       <div class="col-md-7">
         <div class="card input-category">
           <div class="card-body">
-            <form @submit.prevent="articlePost" method="post">
+            <form @submit.prevent="updatedArticle" method="post">
               <div class="mb-3">
                 <label for="category" class="form-label">Title</label>
-                <input type="text" class="form-control" v-model="title" id="title" placeholder="Title">
+                <input type="text" class="form-control" v-model="detail.title" id="title" placeholder="Title">
               </div>
               <div v-if="errors">
                 <div class="alert alert-danger" role="alert">
@@ -23,18 +23,18 @@
                     @focus="onEditorFocus($event)"
                     @ready="onEditorReady($event)"
                     v-quill:myQuillEditor="editorOption"
-                    v-model="body"
+                    v-model="detail.body"
                 >
                 </div>
               </div>
               <div class="mb-3">
                 <label for="category" class="form-label">Category</label>
-                <select name="" id="" class="form-control" v-model="category_id">
+                <select name="" id="" class="form-control" v-model="detail.category_id">
                   <option v-for="(categories, index) in category" :key="index" :value="categories.id">{{categories.category}}</option>
                 </select>
               </div>
               <div class="mb-3">
-                <button type="submit" class="btn btn-outlines">Create</button>
+                <button type="submit" class="btn btn-outlines">Update</button>
               </div>
             </form>
           </div>
@@ -57,7 +57,7 @@
                   <td>{{articles.id}}</td>
                   <td>{{articles.title}}</td>
                   <td>
-                    <nuxt-link :to="'artikel/' + articles.slug" class="btn btn-info">Edit</nuxt-link>
+                    <nuxt-link :to="'kategori/' + articles.id" class="btn btn-info">Edit</nuxt-link>
                   </td>
                 </tr>
               </tbody>
@@ -75,22 +75,19 @@ export default {
     return {
       article: {},
       category: {},
+      detail: [],
       title:'',
       category_id:'',
       body: '',
       errors: null,
 
       editorOption: {
-        // some quill options
         modules: {
           toolbar: [
-            ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+            ['bold', 'italic', 'underline', 'strike'],
             ['blockquote', 'code-block'],
-
             [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-
             [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
             [{ 'font': [] }],
             [{ 'align': [] }],
             ['link', 'image']
@@ -102,7 +99,8 @@ export default {
 
   mounted() {
     this.getArticle(),
-    this.getCategori()
+    this.getCategori(),
+    this.getArticleDetail()
   },
 
   methods: {
@@ -145,6 +143,33 @@ export default {
       .catch(e => {
         console.log(e.res.data)
       })
+    },
+
+    getArticleDetail() {
+      this.$axios.get(`article/${this.$route.params.slug}`)
+      .then(res => {
+        console.log(res.data.data)
+        this.detail = res.data.data
+      })
+      .catch(e => {
+        console.log(e.data.errors)
+      })
+    },
+
+    async updatedArticle() {
+      try {
+        await this.$axios.put(`article/${this.$route.params.slug}`, {
+          title: this.detail.title,
+          category_id: this.detail.category_id,
+          body: this.detail.body
+        })
+        .then(() => {
+          this.$router.push('/artikel')
+        })
+
+      } catch (e) {
+        this.errors = e.response.data.errors
+      }
     },
 
     onEditorBlur(editor) {

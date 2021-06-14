@@ -159,4 +159,8 @@ hr {
 .coffe:hover {
   color: #404b69;
 }
+p.content img {
+  max-width: 100%;
+  height: auto;
+}
 </style>
