@@ -2,11 +2,11 @@
   <div class="containers">
     <div class="row">
       <div class="col-md-8 mt-3">
-        <div v-show="errors == 404">
+        <!-- <div v-show="errors == 404">
           <img src="~/assets/image/no_result.svg" class="images" /> <br>
           <p class="text-center">Not Result ...</p>
-        </div>
-        <div v-else>
+        </div> -->
+        <!-- <div v-else> -->
           <div class="card read">
             <div class="card-body">
               <div class="d-flex justify-content-between">
@@ -47,7 +47,7 @@
           </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
 
       <div class="col-md-4 mt-3">
         <div class="card read">
