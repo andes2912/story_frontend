@@ -2,7 +2,7 @@
   <div class="containers">
     <div class="row">
       <div class="col-md-8 mt-3">
-        <div v-if="errors == 404">
+        <div v-show="errors == 404">
           <img src="~/assets/image/no_result.svg" class="images" /> <br>
           <p class="text-center">Not Result ...</p>
         </div>
@@ -77,7 +77,7 @@ export default {
   },
 
   methods: {
-    async getDetailArticle() {
+    getDetailArticle() {
       this.$axios.get(`articles/${this.$route.params.slug}`)
       .then(response => {
         this.detail = response.data.data
