@@ -1,4 +1,5 @@
 <template>
+<client-only>
   <div class="containers">
     <div class="row">
       <div class="col-md-8 mt-3">
@@ -53,13 +54,13 @@
         <div class="card read">
           <div class="card-body">
             <h4 class="font-monospace" style="color:black"><u>Other Link</u></h4>
-
             <p class="other" v-for="(articles ,index) in article" :key="index"><nuxt-link :to=" articles.slug " class="other-link">{{articles.title}}</nuxt-link></p>
           </div>
         </div>
       </div>
     </div>
   </div>
+</client-only>
 </template>
 <script>
 export default {
@@ -88,18 +89,6 @@ export default {
         console.log(error.res.data.errors)
       }
     },
-    // getDetailArticle() {
-    //   this.$axios.get(`news/${this.$route.params.slug}`)
-    //   .then(response => {
-    //     this.detail = response.data.data
-    //     this.user = response.data.data.user
-    //     this.category = response.data.data.category
-    //   })
-    //   .catch(e => {
-    //     this.errors = e.response.data.errors
-    //     console.log(e.response.data.errors)
-    //   })
-    // },
     getArticle() {
       this.$axios.get('/articles')
       .then(res => {
