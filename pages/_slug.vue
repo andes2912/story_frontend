@@ -1,29 +1,36 @@
 <template>
   <div class="containers">
     <div class="row">
+
+
       <div class="col-md-8 mt-3">
-        <div class="card read">
-          <div class="card-body">
-            <div class="d-flex justify-content-between">
-              <div>
-                <p class="font-monospace date">12 Juni 2021</p>
-              </div>
-              <div>
-                <i class="bi bi-bookmark-fill" style="color:white; font-size:1.2rem"></i>
-              </div>
-            </div>
-            <h3 class="font-monospace" style="color:white">{{detail.title}}</h3>
-            <hr>
-            <p class="content" v-html="detail.body"></p>
-            <div class="d-flex justify-content-between">
-              <div>
-                <button class="btn btn-outline shadow">Story</button>
-                <button class="btn btn-outline shadow">Netizen</button>
-              </div>
-          </div>
-          </div>
+        <div v-if="errors != 200">
+          <img src="~/assets/image/no_result.svg" class="images" /> <br>
+          <p class="text-center">Not Result ...</p>
         </div>
-        <div class="card author mt-3">
+        <div v-else>
+          <div class="card read">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <p class="font-monospace date">12 Juni 2021</p>
+                </div>
+                <div>
+                  <i class="bi bi-bookmark-fill" style="color:white; font-size:1.2rem"></i>
+                </div>
+              </div>
+              <h3 class="font-monospace" style="color:white">{{detail.title}}</h3>
+              <hr>
+              <p class="content" v-html="detail.body"></p>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <button class="btn btn-outline shadow">Story</button>
+                  <button class="btn btn-outline shadow">Netizen</button>
+                </div>
+            </div>
+            </div>
+          </div>
+          <div class="card author mt-3">
           <div class="card-body d-flex justify-content-start">
             <img src="https://andridesmana.pw/images/me.png" class="avatar">
             <div class="bio">
@@ -39,6 +46,7 @@
               </p>
               <p><a href="https://saweria.co/andes2912" target="_blank" class="coffe">Give me a Coffe <i class="bi bi-cup-fill" style="font-size:1.3rem"></i></a> </p>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -60,7 +68,8 @@ export default {
   data() {
     return {
       detail: [],
-      article:[]
+      article:[],
+      errors: []
     }
   },
 
@@ -77,7 +86,7 @@ export default {
           this.detail = res.data.data
         })
       } catch (error) {
-        console.log(error.res.data.errors);
+        this.errors = error.res.data.errors
       }
     },
     getArticle() {
@@ -87,7 +96,7 @@ export default {
         console.log(res.data.data)
       })
       .catch(e => {
-        console.log(e.data.errors);
+        this.errors = e.data.errors
       })
     }
   },
@@ -162,5 +171,11 @@ hr {
 p.content img {
   max-width: 100%;
   height: auto;
+}
+.images {
+  max-width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
