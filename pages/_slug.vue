@@ -77,7 +77,7 @@ export default {
   },
 
   methods: {
-    getDetailArticle() {
+    async getDetailArticle() {
       this.$axios.get(`articles/${this.$route.params.slug}`)
       .then(response => {
         this.detail = response.data.data
