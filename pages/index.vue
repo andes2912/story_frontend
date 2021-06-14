@@ -1,6 +1,8 @@
 <template>
   <div class="containers">
-    <Card />
+    <client-only>
+      <Card />
+    </client-only>
   </div>
 </template>
 

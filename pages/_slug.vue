@@ -67,8 +67,7 @@ export default {
   data() {
     return {
       detail: [],
-      article:[],
-      errors: []
+      article:[]
     }
   },
 
