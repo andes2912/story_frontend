@@ -197,4 +197,9 @@ thead {
   border: 2px solid !important;
   background-color: whitesmoke;
 }
+
+.ql-toolbar.ql-snow {
+  border: 2px solid !important;
+  background-color: wheat !important;
+}
 </style>
