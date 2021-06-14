@@ -95,11 +95,11 @@ export default {
     //     this.user = response.data.data.user
     //     this.category = response.data.data.category
     //   })
-      .catch(e => {
-        this.errors = e.response.data.errors
-        console.log(e.response.data.errors)
-      })
-    },
+    //   .catch(e => {
+    //     this.errors = e.response.data.errors
+    //     console.log(e.response.data.errors)
+    //   })
+    // },
     getArticle() {
       this.$axios.get('/articles')
       .then(res => {
