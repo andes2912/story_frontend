@@ -1,4 +1,4 @@
-# Frontend
+# Frontend of Story
 
 ## Build Setup
 
@@ -16,5 +16,8 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
+
+## Clone backend API
+Backend API [here](https://github.com/andes2912/api_story)
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
