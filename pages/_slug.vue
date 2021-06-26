@@ -12,7 +12,7 @@
             <div class="card-body">
               <div class="d-flex justify-content-between">
                 <div>
-                  <p class="font-monospace date">12 Juni 2021</p>
+                  <p class="font-monospace date">{{detail.created_at | moment}}</p>
                 </div>
                 <div>
                   <i class="bi bi-bookmark-fill" style="color:white; font-size:1.2rem"></i>
@@ -21,12 +21,6 @@
               <h3 class="font-monospace" style="color:white">{{detail.title}}</h3>
               <hr>
               <p class="content" v-html="detail.body"></p>
-              <div class="d-flex justify-content-between">
-                <div>
-                  <button class="btn btn-outline shadow">Story</button>
-                  <button class="btn btn-outline shadow">Netizen</button>
-                </div>
-            </div>
             </div>
           </div>
           <div class="card author mt-3">
@@ -36,6 +30,7 @@
                 <span class="font-monospace"><a href="https://andridesmana.pw/" target="_blank" class="other-link">Andri Desmana</a></span><br>
                 <p class="small"><em>Hidup gak selamanya diatas, juga gak selamanya dibawah.</em></p>
                 <p class="font-monospace">
+                  <a href="https://andridesmana.pw" target="_blank"><i class="bi bi-globe" style="color:grey; font-size:1.2rem"></i></a>
                   <a href="https://www.linkedin.com/in/andri-desmana" target="_blank"><i class="bi bi-linkedin" style="color:grey; font-size:1.2rem"></i></a>
                   <a href="https://www.facebook.com/andridesmana/" target="_blank"><i class="bi bi-facebook" style="color:grey; font-size:1.2rem"></i></a>
                   <a href="https://www.instagram.com/andridesmana/" target="_blank"><i class="bi bi-instagram" style="color:grey; font-size:1.2rem"></i></a>
@@ -64,6 +59,7 @@
 </client-only>
 </template>
 <script>
+import moment from 'moment'
 import MoreCard from '../components/MoreCard.vue'
 export default {
   components: {
@@ -73,6 +69,12 @@ export default {
     return {
       detail: [],
       article:[]
+    }
+  },
+
+  filters: {
+    moment: function (date) {
+      return moment(date).format('D MMMM YYYY');
     }
   },
 
