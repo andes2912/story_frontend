@@ -42,6 +42,7 @@
               </div>
               <div class="mb-3">
                 <button type="submit" class="btn btn-outlines">Update</button>
+                <nuxt-link :to="'/artikel/'" class="btn btn-warning">Cancel</nuxt-link>
               </div>
             </form>
           </div>
@@ -61,10 +62,10 @@
               </thead>
               <tbody>
                 <tr v-for="(articles, index) in article" :key="index" style="color:white">
-                  <td>{{articles.id}}</td>
-                  <td>{{articles.title}}</td>
+                  <td :style="articles.status == 'Draft' ? 'color:red' : ''">{{articles.id}}</td>
+                  <td :style="articles.status == 'Draft' ? 'color:red' : ''">{{articles.title}}</td>
                   <td>
-                    <nuxt-link :to="'kategori/' + articles.id" class="btn btn-info">Edit</nuxt-link>
+                    <nuxt-link :to="'/artikel/' + articles.slug" class="btn btn-info">Edit</nuxt-link>
                   </td>
                 </tr>
               </tbody>

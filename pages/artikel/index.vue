@@ -61,8 +61,8 @@
               </thead>
               <tbody>
                 <tr v-for="(articles, index) in article" :key="index" style="color:white">
-                  <td>{{articles.id}}</td>
-                  <td>{{articles.title}}</td>
+                  <td :style="articles.status == 'Draft' ? 'color:red' : ''">{{articles.id}}</td>
+                  <td :style="articles.status == 'Draft' ? 'color:red' : ''">{{articles.title}}</td>
                   <td>
                     <nuxt-link :to="'artikel/' + articles.slug" class="btn btn-info">Edit</nuxt-link>
                   </td>

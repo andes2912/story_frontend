@@ -20,6 +20,7 @@
               </div>
               <div class="mb-3">
                 <button type="submit" class="btn btn-outline">Update</button>
+                <nuxt-link :to="'/kategori/'" class="btn btn-warning">Cancel</nuxt-link>
               </div>
             </form>
           </div>
@@ -42,7 +43,7 @@
                   <td>{{categories.id}}</td>
                   <td>{{categories.category}}</td>
                   <td>
-                    <a href="" class="btn btn-info ">Edit</a>
+                    <nuxt-link :to="'/kategori/' + categories.id" class="btn btn-info ">Edit</nuxt-link>
                   </td>
                 </tr>
               </tbody>
