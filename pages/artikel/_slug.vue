@@ -34,6 +34,13 @@
                 </select>
               </div>
               <div class="mb-3">
+                <label for="category" class="form-label">Status</label>
+                <select class="form-control" v-model="detail.status">
+                  <option value="Publish">Publish</option>
+                  <option value="Draft">Draft</option>
+                </select>
+              </div>
+              <div class="mb-3">
                 <button type="submit" class="btn btn-outlines">Update</button>
               </div>
             </form>
@@ -79,6 +86,7 @@ export default {
       title:'',
       category_id:'',
       body: '',
+      status: '',
       errors: null,
 
       editorOption: {
@@ -109,12 +117,14 @@ export default {
         await this.$axios.post('article', {
           title: this.title,
           category_id: this.category_id,
-          body: this.body
+          body: this.body,
+          status: this.status
         })
         .then(() => {
          this.title = '',
          this.category_id = '',
          this.body = '',
+         this.status = '',
 
         this.$router.push('artikel')
         this.getArticle()
@@ -161,7 +171,8 @@ export default {
         await this.$axios.put(`article/${this.$route.params.slug}`, {
           title: this.detail.title,
           category_id: this.detail.category_id,
-          body: this.detail.body
+          body: this.detail.body,
+          status: this.detail.status
         })
         .then(() => {
           this.$router.push('/artikel')
