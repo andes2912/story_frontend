@@ -16,7 +16,7 @@
               <div class="col-md-12">
                 <div class="card-body">
                   <h5 class="font-monospace title">{{articles.title}}</h5>
-                  <p class="card-text mt-3 title"><small class="text-muted font-monospace">Last updated 3 mins ago</small></p>
+                  <p class="card-text mt-3 title"><small class="text-muted font-monospace">{{articles.created_at | moment}}</small></p>
                 </div>
               </div>
             </div>
@@ -27,10 +27,17 @@
   </div>
 </template>
 <script>
+import moment from 'moment'
 export default {
   data() {
     return {
       article: {}
+    }
+  },
+
+  filters: {
+    moment: function (date) {
+      return moment(date).format('D MMMM YYYY');
     }
   },
 
