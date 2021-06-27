@@ -7,6 +7,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="https://andridesmana.pw/" class="nav-link text-white font-monospace">Portofolio</a>
+          </li>
           <template v-if="isLoggedIn">
             <li class="nav-item">
               <nuxt-link to="/artikel" class="nav-link text-white font-monospace">Article</nuxt-link>
