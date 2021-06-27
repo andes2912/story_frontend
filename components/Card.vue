@@ -50,7 +50,6 @@ export default {
       this.$axios.get('/articles')
       .then(res => {
         this.article = res.data.data
-        console.log(res.data.data)
       })
       .catch(e => {
         console.log(e.data.errors);

@@ -9,23 +9,23 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <template v-if="isLoggedIn">
             <li class="nav-item">
-              <nuxt-link to="/artikel" class="nav-link text-white">Article</nuxt-link>
+              <nuxt-link to="/artikel" class="nav-link text-white font-monospace">Article</nuxt-link>
             </li>
             <li class="nav-item">
-              <nuxt-link to="/kategori" class="nav-link text-white">Category</nuxt-link>
+              <nuxt-link to="/kategori" class="nav-link text-white font-monospace">Category</nuxt-link>
             </li>
           </template>
         </ul>
         <ul class="navbar-nav">
           <template v-if="isLoggedIn">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle font-monospace" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{user.name}}
               </a>
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><nuxt-link class="dropdown-item" to="/profile">Profile</nuxt-link></li>
+                <li><nuxt-link class="dropdown-item font-monospace" to="/profile">Profile</nuxt-link></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="" @click="logout">Logout</a></li>
+                <li><a class="dropdown-item font-monospace" href="" @click="logout">Logout</a></li>
               </ul>
             </li>
           </template>

@@ -1,7 +1,7 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-  mode: 'spa',
+  // mode: 'spa',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -15,7 +15,7 @@ export default {
       { hid: 'description', name: 'description', content: 'Story of Andri Desmana - Andes2912' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/me.png' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css' },
       { rel: 'stylesheet', type: 'text/css', href:'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap'}
 
