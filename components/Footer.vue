@@ -6,7 +6,11 @@
           Made with <i class="bi bi-heart-fill" style="color:red"></i> from Jakarta
         </p>
         <p class="font-monoscape">
-          <a href="https://andridesmana.pw/" class="text-footer font-monospace">Portofolio</a>
+          <a href="https://andridesmana.pw/" class="text-footer font-monospace">Portofolio</a> | 
+          <a href="https://instagram.com/andridesmana" class="text-footer font-monospace">Instagram</a> |
+          <a href="https://twitter.com/andri_desmana" class="text-footer font-monospace">Twitter</a> |
+          <a href="https://github.com/andes2912" class="text-footer font-monospace">Github</a>
+
         </p>
       </div>
      </footer>
