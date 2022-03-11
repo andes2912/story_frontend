@@ -3,8 +3,8 @@
     <div class="col mb-4">
       <div class="card welcome">
         <div class="card-body">
-          <p class="font-monospace text-white text-center" style="font-size:30px">Welcome, to my story !!</p>
-          <p class="font-monospace">Cuma nulis kalau lagi mood aja, selain itu sih paling cuma iseng, tapi kadang isi nya lebih serius ! </p>
+          <p class="font-monospace text-black text-center " style="font-size:30px">Welcome, to my story :)</p>
+          <p class="font-monospace text-center">Cuma nulis kalau lagi mood aja, selain itu sih paling cuma iseng, tapi kadang isi nya serius kok :) </p>
         </div>
       </div>
     </div>
@@ -58,9 +58,9 @@ export default {
   },
 }
 </script>
-<style>
+<style scope>
 .welcome {
-  background-color: #e1e099;
+  background-color: #ddb076;
   border: 2px solid;
   box-shadow: 15px 12px 0px -1px #4b5d67 ;
   min-height: 140px;
@@ -70,8 +70,8 @@ export default {
   max-height: 133px;
   border: 3px solid;
   padding: 10px;
-  box-shadow: 15px 12px 0px -1px #4b5d67 ;
-  background-color: rgb(250, 108, 108);
+  box-shadow: 15px 12px 0px -1px rgba(253,175,40,255) ;
+  background-color: #f4c946;
   margin-top: 5px;
 }
 .title {

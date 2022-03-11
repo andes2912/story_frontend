@@ -92,7 +92,6 @@ export default {
     getCategori() {
       this.$axios.get('category')
       .then(res => {
-        console.log(res);
         this.categori = res.data.data
       })
       .catch(e => {
