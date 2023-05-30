@@ -49,6 +49,7 @@ export default {
     async getArticle() {
       this.$axios.get('/articles')
       .then(res => {
+        console.log(res.data)
         this.article = res.data.data
       })
       .catch(e => {
