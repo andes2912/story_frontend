@@ -40,7 +40,7 @@ export default {
 
   methods: {
     async getArticle() {
-      this.$axios.get(`articles/${this.$route.params.slug}`)
+      this.$axios.get(`show-articles/${this.$route.params.slug}`)
       .then(res => {
         this.article = res.data.more
       })
