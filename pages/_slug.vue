@@ -65,9 +65,9 @@ export default {
   methods: {
     getDetailArticle() {
       try {
-        this.$axios.get(`articles/${this.$route.params.slug}`)
+        this.$axios.get(`show-articles/${this.$route.params.slug}`)
         .then(res => {
-          this.detail = res.data.data
+          this.detail = res.data.data.article
         })
       } catch (error) {
         this.errors = error.res.data.errors
@@ -76,7 +76,7 @@ export default {
     getArticle() {
       this.$axios.get('/articles')
       .then(res => {
-        this.article = res.data.data
+        this.article = res.data.data.data
       })
       .catch(e => {
         return this.errors = e.res.data.errors

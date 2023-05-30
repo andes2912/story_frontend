@@ -31,7 +31,7 @@ import moment from 'moment'
 export default {
   data() {
     return {
-      article: {}
+      article: []
     }
   },
 
@@ -49,8 +49,8 @@ export default {
     async getArticle() {
       this.$axios.get('/articles')
       .then(res => {
-        console.log(res.data)
-        this.article = res.data.data
+        this.article = res.data.data.data
+        console.log(res.data.data.data)
       })
       .catch(e => {
         console.log(e.data.errors);
