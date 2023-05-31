@@ -1,12 +1,12 @@
 <template>
   <div class="card author mt-3">
     <div class="card-body d-flex justify-content-start">
-      <img src="https://andridesmana.pw/images/me.png" class="avatar">
+      <img src="https://andridesmana.vercel.app/images/me.jpeg" class="avatar">
       <div class="bio">
-        <span class="font-monospace"><a href="https://andridesmana.pw/" target="_blank" class="other-link">Andri Desmana</a></span><br>
+        <span class="font-monospace"><a href="https://andridesmana.vercel.app/" target="_blank" class="other-link">Andri Desmana</a></span><br>
         <p class="small"><em>Hidup gak selamanya diatas, juga gak selamanya dibawah.</em></p>
         <p class="font-monospace">
-          <a href="https://andridesmana.pw" target="_blank"><i class="bi bi-globe" style="color:grey; font-size:1.2rem"></i></a>
+          <a href="https://andridesmana.vercel.app" target="_blank"><i class="bi bi-globe" style="color:grey; font-size:1.2rem"></i></a>
           <a href="https://www.linkedin.com/in/andri-desmana" target="_blank"><i class="bi bi-linkedin" style="color:grey; font-size:1.2rem"></i></a>
           <a href="https://www.facebook.com/andridesmana/" target="_blank"><i class="bi bi-facebook" style="color:grey; font-size:1.2rem"></i></a>
           <a href="https://www.instagram.com/andridesmana/" target="_blank"><i class="bi bi-instagram" style="color:grey; font-size:1.2rem"></i></a>
