@@ -56,7 +56,7 @@ export default {
   ],
 
   axios: {
-    baseURL: process.env.NODE_ENV === "production" ? "https://api.andridesmana.pw/api" : "http://127.0.0.1:3001/api"
+    baseURL: process.env.NODE_ENV === "production" ? "https://story.mysekolahku.site/api" : "http://127.0.0.1:3001/api"
   },
 
   auth: {
